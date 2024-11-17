@@ -2,19 +2,19 @@ spring:
   datasource:
     url: jdbc:h2:mem:bdh2
     username: userdev
-    password: 123
+    password:
   jpa:
     show-sql: true
     open-in-view: false
     hibernate:
-      ddl-auto: create #validade | update | create | create-drop
+      ddl-auto: create # validate | update | create | create-drop
     properties:
       hibernate:
         format_sql: true
-    h2:
-      console:
-        enable: true
-        path: /h2-console
-        settings:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
           trace: false
           web-allow-others: false
