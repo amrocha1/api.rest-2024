@@ -1,11 +1,16 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
-    username: ${PGUSER}
-    password: ${PGPASSWORD}
-
+    url: jdbc:postgresql://postgres:VneujicjpYeygXmdnFoFzXFxeCCCGQBb@postgres.railway.internal:5432/railway
+    username: postgres
+    password: VneujicjpYeygXmdnFoFzXFxeCCCGQBb
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: HikariCP
+      maximum-pool-size: 10
   jpa:
-    open-in-view: false
     hibernate:
-      ddl-auto: create
-
+      ddl-auto: create  # Use 'update' ou 'validate' dependendo do seu caso
+    show-sql: true  # Exibe as queries SQL no console
+    properties:
+      hibernate:
+        format_sql: true
